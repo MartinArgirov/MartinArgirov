@@ -68,3 +68,23 @@ class LivroQuery(ListView):
         ctx = super().get_context_data(**kwargs)
         ctx['total'] = Despesa.objects.filter(categoria__nome = 'Livros').aggregate(a=Sum('valor'))
         return ctx
+
+class ComprasQuery(ListView):
+    model = Despesa
+    queryset = Despesa.objects.filter(categoria__nome='Compras')
+    template_name = 'financas/categoria_list.html'
+
+    def get_context_data(self, **kwargs): 
+        ctx = super().get_context_data(**kwargs)
+        ctx['total'] = Despesa.objects.filter(categoria__nome = 'Compras').aggregate(a=Sum('valor'))
+        return ctx 
+
+class AnimalQuery(ListView):
+    model = Despesa
+    queryset = Despesa.objects.filter(categoria__nome='Animais')
+    template_name = 'financas/despesa_update.html'
+
+    def get_context_data(self, **kwargs): 
+        ctx = super().get_context_data(**kwargs)
+        ctx['total'] = Despesa.objects.filter(categoria__nome = 'Animais').aggregate(a=Sum('valor'))
+        return ctx                  

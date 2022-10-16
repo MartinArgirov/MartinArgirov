@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a class="btn btn-primary" href="{% url 'financas:categoria-new' %}">Novo</a>
+<h4>Criar novo <a class="btn btn-outline-primary" href="{% url 'financas:categoria-new' %}"><i class="fa-solid fa-plus"></i></a></h4>
 <h3>Categorias</h3>
 <table class="table">
     <tr>
-        <th style="width: 60px;">#</th>
+        <th style="width: 60px;">Imagem</th>
         <th>Nome</th>
     </tr>
     {% for object in object_list %}

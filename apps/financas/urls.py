@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import (home, about, CategoriaCreateView, CategoriaDetailView, CategoriaListView, CategoriaUpdateView,
-                    DespesaCreateView, DespesaDetailView, DespesaListView, DespesaUpdateView, CarroQuery, LivroQuery)
+from .views import (home, CategoriaCreateView, CategoriaDetailView, CategoriaListView, CategoriaUpdateView,
+                    DespesaCreateView, DespesaDetailView, DespesaListView, DespesaUpdateView, CarroQuery, 
+                    LivroQuery, ComprasQuery, AnimalQuery)
 
 app_name = "financas"
 
 urlpatterns = [
     path('', home, name='home'),
-    path('', about, name='about'),
     path('categorias/new', CategoriaCreateView.as_view(), name='categoria-new'),
     path('categorias/list', CategoriaListView.as_view(), name='categoria-list'),
     path('categorias/update/<int:pk>', CategoriaUpdateView.as_view(), name='categoria-update'),
@@ -17,4 +17,6 @@ urlpatterns = [
     path('despesas/detail/<int:pk>', DespesaDetailView.as_view(), name='despesa-detail'),
     path('despesas/list/carro', CarroQuery.as_view(), name='despesa-list-carro'),
     path('despesas/list/livros', LivroQuery.as_view(), name='despesa-list-livro'),
+    path('categorias/list/compras', ComprasQuery.as_view(), name='categoria-list-comida'),
+    path('despesa/list/animais', AnimalQuery.as_view(), name='despesa-list-animal'),
 ]

@@ -15,7 +15,7 @@
                 <img src="{{ categoria_carro.imagem.url }}" class="card-img-top" height="200px">
                 <div class="card-body" style="text-align: center;">
                     <h3>{{categoria_carro.nome}}</h3>
-                    <p class="card-text">{{ valor_carro.total|floatformat:2 }}€</p>
+                    <!-- <p class="card-text">{{ valor_consulta.total|floatformat:2 }}€</p> -->
                 </div>
             </div>
         </a>
@@ -26,7 +26,30 @@
                 <img src="{{ categoria_livros.imagem.url }}" class="card-img-top" height="200px">
                 <div class="card-body" style="text-align: center;">
                     <h3>{{categoria_livros.nome}}</h3>
-                    <p class="card-text">{{ valor_livros.total|floatformat:2 }}€</p>
+                    <!-- <p class="card-text">{{ valor_consulta.total|floatformat:2 }}€</p> -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col-3">
+        <a href="{% url 'financas:categoria-list-comida' %}" style="text-decoration: none; color: blue">
+            <div class="card" style="height: 300px;">
+                <img src="../media/uploads_categorias/compras.jpg" class="card-img-top" height="200px">
+                <div class="card-body" style="text-align: center;">
+                    <h3>Compras</h3>
+                    <!-- <p class="card-text">{{ valor_consulta.total|floatformat:2 }}€</p> -->
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-3">
+        <a href="{% url 'financas:despesa-list-animal' %}" style="text-decoration: none; color: blue">
+            <div class="card" style="height: 300px;">
+                <img src="../media/uploads_categorias/animais.jpg" class="card-img-top" height="200px">
+                <div class="card-body" style="text-align: center;">
+                    <h3>Animais</h3>
+                    <!-- <p class="card-text">{{ valor_consulta.total|floatformat:2 }}€</p> -->
                 </div>
             </div>
         </a>
