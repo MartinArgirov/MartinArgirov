@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'financas:categoria-new' %}">Novo</a>
+<h3>Categorias</h3>
+<table class="table">
+    <tr>
+        <th style="width: 60px;">#</th>
+        <th>Nome</th>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td style="width: 60px;"><img src="{{ object.imagem.url }}" height="20px"></td>
+            <td>{{ object.nome }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

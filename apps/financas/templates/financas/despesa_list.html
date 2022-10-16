@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'financas:despesa-new' %}">Novo</a>
+<h3>Despesas</h3>
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Categoria</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td style="width: 40px;"><img src="{{ object.categoria.imagem.url }}" height="20px"></td>
+            <td>{{ object.categoria }}</td>
+            <td>{{ object.descricao }}</td>
+            <td>{{ object.valor }}€</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>{{ total.a|floatformat:2 }}€</b></td>
+    </tr>
+</table>
+{% endblock content %}

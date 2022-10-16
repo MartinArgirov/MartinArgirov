@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .card:hover{
+        background-color:rgb(197, 129, 2);
+        transition-duration: 0.7s;
+        color: white;
+        }
+</style>
+<div class="row">
+    <div class="col-3">
+        <a href="{% url 'financas:despesa-list-carro' %}" style="text-decoration: none; color:currentColor;">
+            <div class="card" style="height: 300px;">
+                <img src="{{ categoria_carro.imagem.url }}" class="card-img-top" height="200px">
+                <div class="card-body" style="text-align: center;">
+                    <h3>{{categoria_carro.nome}}</h3>
+                    <p class="card-text">{{ valor_carro.total|floatformat:2 }}€</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-3">
+        <a href="{% url 'financas:despesa-list-livro' %}" style="text-decoration: none; color:currentColor">
+            <div class="card" style="height: 300px;">
+                <img src="{{ categoria_livros.imagem.url }}" class="card-img-top" height="200px">
+                <div class="card-body" style="text-align: center;">
+                    <h3>{{categoria_livros.nome}}</h3>
+                    <p class="card-text">{{ valor_livros.total|floatformat:2 }}€</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
